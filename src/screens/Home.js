@@ -1,6 +1,6 @@
 import React, { Component } from 'react'
 import {View,TouchableOpacity,Text, FlatList, SafeAreaView} from 'react-native'
-import { MaterialIcons} from '@expo/vector-icons';
+import { MaterialIcons,EvilIcons} from '@expo/vector-icons';
 import {inject} from 'mobx-react'
 import {API_URL} from '../config/config'
 import axios from 'axios'
@@ -23,7 +23,8 @@ export default class Home extends Component {
     
     static navigationOptions = ({navigation})=>{
         return {
-            title:<Text style={{textAlign:'center',justifyContent:'center'}}>Bölümler</Text>,
+            title:<Text style={{color:'Black', justifyContent:'center', alignItems:'center', fontFamily:'Open Sans', fontSize:26, marginLeft:50}}>LearnEng</Text>,
+            headerLeft:<TouchableOpacity onPress={()=>navigation.navigate('Profile')}style={{marginRight:15,padding:5}}><EvilIcons name="user" size={30} color="black" /></TouchableOpacity>,
             headerRight: 
                  <TouchableOpacity onPress={navigation.getParam("logout")
                    } style={{marginRight:15,padding:5}}>
@@ -64,8 +65,9 @@ export default class Home extends Component {
 
     render() {
         return (
-            
-                <Slider data={this.state.data} style={{flex:1}}></Slider>
+          <React.Fragment>
+            <Slider data={this.state.data} style={{flex:1}}></Slider>
+          </React.Fragment>
                 
             
         )

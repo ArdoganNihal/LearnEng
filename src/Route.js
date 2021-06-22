@@ -8,6 +8,7 @@ import AuthRedirect from './screens/AuthRedirect'
 import CategoryDetail from './components/Category/CategoryDetail';
 import ChapterDetail from './components/Chapter/ChapterDetail';
 import Slider from './screens/Slider'
+import Profile from './screens/Profile'
 
 const AppStack=createStackNavigator({
   Home:{
@@ -22,7 +23,8 @@ const AppStack=createStackNavigator({
   },
   Slider:{
     screen:Slider
-  }
+  },
+  Profile
 })
 const AuthenticateStack=createStackNavigator({
     Login:{
