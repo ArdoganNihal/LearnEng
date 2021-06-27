@@ -174,7 +174,7 @@ const Slider = inject("AuthenticateStore")(observer((props)=>{
                                     padding:SPACING*2,
                                     alignItems:'center',
                                     backgroundColor:'white',
-                                    borderRadius:34,
+                                    //borderRadius:34,
                                     transform:[{translateY}]
                                     }}
                                 >
@@ -226,7 +226,7 @@ const style = StyleSheet.create({
       width:'100%',
       height:ITEM_SIZE*1.2,
       resizeMode:'cover',
-      borderRadius:24,
+      //borderRadius:44,
       margin:0,
       marginBottom:10
     }

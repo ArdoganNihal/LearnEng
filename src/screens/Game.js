@@ -164,7 +164,7 @@ const Game = inject("AuthenticateStore")(observer((props)=> {
            {!rightAnswer && 
            <React.Fragment>
 
-              <View style={{height:30,width:30,backgroundColor:'#E4E4E4',margin:10}} >
+              <View style={{height:30,width:30,backgroundColor:'white',margin:10}} >
                     <TouchableOpacity onPress={()=>showClue()} >
                             <MaterialCommunityIcons name="lightbulb-on" size={24} color="yellow" />
                     </TouchableOpacity>
@@ -185,7 +185,7 @@ const Game = inject("AuthenticateStore")(observer((props)=> {
                </Text>
            </View>
            </View>  
-           <View style={style.keywords_area}>
+           <View style={style.rectangle}>
                {keywords.map((item,index)=>(
                    <TouchableOpacity onPress={()=>removeKeyword(index)} style={[style.keywords,{backgroundColor:(wrong)?'red':'yellow'}]} key={index}>
                        <Text style={style.keywords_text}>
@@ -231,28 +231,29 @@ const style=StyleSheet.create({
         textAlign:'center',
         justifyContent:'center',
         alignItems:'center',
-        flex:1
-
+        flex:1,
     },
     show_area:{
-        backgroundColor:'white',
-        width:width*.9,
+        backgroundColor:'#c0c0c0',
+        width:width*.7,
         justifyContent:'center',
         textAlign:'center',
         alignItems:'center',
-        borderBottomLeftRadius:25,
-        borderBottomRightRadius:25,
+        //borderBottomLeftRadius:25,
+        //borderBottomRightRadius:25,
 
     },
     question_area:{
         height:50,
         flexDirection:'row',
-        marginBottom:15
+        //marginBottom:10
     },
     question_text:{
         fontSize:20,
         fontWeight:'700',
         textAlign:'center',
+        paddingTop:10,
+        justifyContent:'center'
 
     },
     progress_area:{
@@ -266,20 +267,22 @@ const style=StyleSheet.create({
         flexWrap:'wrap',
         padding:20,
         justifyContent:'space-around',
-        width:width*.9,
-        backgroundColor:'white',
-        height:200,
-        marginTop:20,
-        borderBottomLeftRadius:50,
-        borderBottomRightRadius:150
+        width:160,
+        backgroundColor:'#c0c0c0',
+        height:160,
+        marginTop:100,
+        borderRadius:160/2,
+        
+        //borderBottomLeftRadius:50,
+        //borderBottomRightRadius:150
         
     },
     letter:{
-        margin:10,
-        width:40,
-        height:40,
-        backgroundColor:'aqua',
-        borderRadius:30,
+        margin:1,
+        width:30,
+        height:30,
+        backgroundColor:'#ffe4b5',
+        //borderRadius:30,
         justifyContent:'center',
         
 
@@ -293,27 +296,39 @@ const style=StyleSheet.create({
     keywords_area:{
         flexDirection:'row',
         flexWrap:'wrap',
-        padding:20,
+        //padding:20,
         height:95,
         width:width*.9,
         justifyContent:'center',
         marginTop:10,
         backgroundColor:'#D2B99D',
-        borderRadius:20
+        //borderRadius:20
         
     },
     keywords:{
-        margin:4,
+        margin:1,
         width:25,
         height:25,
         backgroundColor:'yellow',
-        borderRadius:30,
+        //borderRadius:30,
         justifyContent:'center',
     },
     keywords_text:{
         justifyContent:'center',
         textAlign:'center',
         fontWeight:'700'
+    }, 
+    rectangle:{
+        flexDirection:'row',
+        //flexWrap:'wrap',
+        //padding:10,
+        height:55,
+        width:width*.7,
+        borderWidth:2,
+        borderColor:'#dda0dd',
+        justifyContent:'center',
+        position: 'absolute', 
+       
     }
 
 
